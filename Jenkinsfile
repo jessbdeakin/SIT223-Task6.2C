@@ -13,6 +13,7 @@ pipeline {
 				echo "Fetch source code from directory path ${DIRECTORY_PATH}"
 				echo 'Compile the code and generate artefacts'
 
+				git url: 'https://github.com/jessbdeakin/SIT223-Task6.2C.git'
 
 			}
 		}
