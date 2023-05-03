@@ -13,7 +13,6 @@ pipeline {
 				echo "Fetch source code from directory path ${DIRECTORY_PATH}"
 				echo 'Compile the code and generate artefacts'
 
-				sh 'cd ${DIRECTORY_PATH}'
 
 			}
 		}
