@@ -23,6 +23,8 @@ pipeline {
 			steps {
 				echo 'Unit tests'
 				echo 'Integration tests'
+
+				bat './app/build/exe/main/debug/app.exe'
 			}
 		}
 		
