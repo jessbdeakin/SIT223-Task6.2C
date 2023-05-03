@@ -33,7 +33,7 @@ pipeline {
 			steps {
 				echo 'Check the quality of the code'
 
-				cppcheck SOURCE_PATH 2> cppcheck.xml
+				bat 'cppcheck %SOURCE_PATH% 2> cppcheck.xml'
 			}
 		}
 		  
