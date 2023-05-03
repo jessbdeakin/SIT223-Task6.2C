@@ -32,9 +32,9 @@ pipeline {
 			}
 		}
 		  
-		stage('Secury Scan'){
+		stage('Securityy Scan'){
 			steps {
-
+				echo 'Meow.'
 			}
 		}
 		
