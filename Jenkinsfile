@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	environment {
-		SOURCE_PATH = "./app/src/"
+		SOURCE_PATH = "app/src/"
 		TESTING_ENVIRONMENT = "JessTest"
 		PRODUCTION_ENVIRONMENT = "Jess"
 	}
@@ -24,7 +24,7 @@ pipeline {
 				echo 'Unit tests'
 				echo 'Integration tests'
 
-				bat './app/build/exe/main/debug/appTest.exe'
+				bat 'app/build/exe/main/debug/appTest.exe'
 				// 
 			}
 		}
