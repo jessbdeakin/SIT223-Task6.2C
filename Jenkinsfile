@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	
 	environment {
-		DIRECTORY_PATH = "/c/home/university/223-PRO/6.2C/"
+		SOURCE_PATH = "./app/src/"
 		TESTING_ENVIRONMENT = "JessTest"
 		PRODUCTION_ENVIRONMENT = "Jess"
 	}
@@ -10,7 +10,7 @@ pipeline {
 	stages {
 		stage('Build') {
 			steps {
-				echo "Fetch source code from directory path ${DIRECTORY_PATH}"
+				echo "Fetch source code"
 				echo 'Compile the code and generate artefacts'
 
 				git branch: 'main', url: 'https://github.com/jessbdeakin/SIT223-Task6.2C.git'
@@ -24,13 +24,16 @@ pipeline {
 				echo 'Unit tests'
 				echo 'Integration tests'
 
-				bat './app/build/exe/main/debug/app.exe'
+				bat './app/build/exe/main/debug/appTest.exe'
+				// 
 			}
 		}
 		
 		stage('Code Analysis'){
 			steps {
 				echo 'Check the quality of the code'
+
+				cppcheck --enable=all --inconclusive --xml --xml-version=2 ${SOURCE_PATH} 2> cppcheck.xml
 			}
 		}
 		  
