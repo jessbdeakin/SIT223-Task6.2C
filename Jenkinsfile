@@ -15,7 +15,7 @@ pipeline {
 
 				git branch: 'main', url: 'https://github.com/jessbdeakin/SIT223-Task6.2C.git'
 
-				bat 'gradle clean build'
+				bat './gradlew.bat'
 			}
 		}
 		
