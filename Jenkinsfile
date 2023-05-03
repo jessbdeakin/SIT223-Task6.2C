@@ -14,7 +14,6 @@ pipeline {
 				echo 'Compile the code and generate artefacts'
 
 				sh 'cd ${DIRECTORY_PATH}'
-				sh 'ls > test.txt'
 
 			}
 		}
