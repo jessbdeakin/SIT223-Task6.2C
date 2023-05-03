@@ -24,7 +24,7 @@ pipeline {
 				echo 'Unit tests'
 				echo 'Integration tests'
 
-				bat '.\\app\\build\\exe\\main\\debug\\appTest.exe'
+				bat '.\\app\\build\\exe\\test\\appTest.exe'
 				// 
 			}
 		}
