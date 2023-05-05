@@ -15,7 +15,7 @@ pipeline {
 			steps {
 
 				echo "Fetch source code"
-				git branch: '%GIT_BRANCH%', url: '%GIT_REPOSITORY%'
+				git branch: "${GIT_BRANCH}", url: "${GIT_REPOSITORY}"
 
 				echo 'Build code with Gradle'
 				// bat 'gradle clean build'
