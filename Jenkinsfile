@@ -5,7 +5,7 @@ pipeline {
 		GIT_REPOSITORY = "https://github.com/jessbdeakin/SIT223-Task6.2C.git"
 		GIT_BRANCH = "main"
 
-		EMAIL_ADDRESS = "s222317449@deakin.edu.au"
+		EMAIL_ADDRESS = "s222317449@proton.me"
 
 		BUILD_PATH = '/build'
 	}
@@ -20,7 +20,7 @@ pipeline {
 				echo 'Build code with Gradle'
 				// bat 'gradle clean build'
 
-				mail to: "s222317449@deakin.edu.au", subject: "Test Email", body: "Test"
+				mail to: "${EMAIL_ADDRESS}", subject: "Test Email", body: "Test"
 			}
 		}
 		
