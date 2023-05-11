@@ -11,6 +11,9 @@ pipeline {
 		TEST_PATH = 'test'
 
 		CPPCHECK_LOG = 'cppcheck.log'
+
+		PRODUCTION_ENVIRONMENT = 'jessprod'
+		TESTING_ENVIRONMENT = 'jesstest'
 	}
 
 	stages {
