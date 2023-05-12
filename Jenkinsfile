@@ -8,7 +8,9 @@ pipeline {
 		EMAIL_ADDRESS = "s222317449@deakin.edu.au"
 
 		BUILD_PATH = 'build'
-		TEST_PATH = 'test'
+
+		BUILD_TEST_PATH = 'btest'
+		STAGING_TEST_PATH = 'stest'
 
 		CPPCHECK_LOG = 'cppcheck.log'
 
@@ -31,7 +33,7 @@ pipeline {
 		stage('Unit and Integration Tests') {
 			steps {
 				echo 'Run unit tests generated with the Google Test framework'
-				// bat '%TEST_PATH%/test.exe'
+				// bat '%BUILD_TEST_PATH%/test.exe'
 
 				mail to: "${EMAIL_ADDRESS}", subject: "[JENKINS] Successful test", body: "${currentBuild.rawBuild.log}"
 			}
@@ -70,7 +72,8 @@ pipeline {
 		
 		stage('Integration Tests on Staging'){
 			steps {
-				sleep(10)
+				echo 'Run integration tests generated with the Google Test framework'
+				// bat '%STAGING_TEST_PATH%/test.exe'
 			}
 		}
 		
